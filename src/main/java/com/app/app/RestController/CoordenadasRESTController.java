@@ -19,7 +19,14 @@ import java.util.Map;
 public class CoordenadasRESTController {
 
     private String apiKey = "AIzaSyDsyhROj0LMUt52bB8PozBnt7tnQToS6Eo";
+    private HistoricRESTController historicRESTController;
+
+    public CoordenadasRESTController(HistoricRESTController historicRESTController) {
+        this.historicRESTController = historicRESTController;
+    }
+
     RestTemplate restTemplate = new RestTemplate();
+
 
     @GetMapping("fins/{lat}/{lng}")
     public String geta(@PathVariable String lat, @PathVariable String lng) {
@@ -36,7 +43,7 @@ public class CoordenadasRESTController {
         JsonParser parser = new BasicJsonParser();
         try {
             Map a = parser.parseMap(response.getBody());
-            // Map b =  a.get("results");
+            // Map b =  getUserRole.get("results");
             String as = a.get("results").toString();
             JSONArray jsonArray = new JSONArray(as);
             JSONObject jso = jsonArray.getJSONObject(0);
@@ -69,6 +76,8 @@ public class CoordenadasRESTController {
             JSONArray jsonArray = new JSONArray(resultString);
             JSONObject jsonWanted = jsonArray.getJSONObject(0);
             String address = jsonWanted.get("formatted_address").toString();
+            String[] tokens = address.split(",");
+            historicRESTController.insert(tokens[0]);
             return address;
 
         } catch (JSONException e) {

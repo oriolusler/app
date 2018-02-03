@@ -22,7 +22,7 @@ public class PuntsRESTController {
     }
 
     @GetMapping(value = "all", produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Puntuacio> listUsers() {
+    public List<Puntuacio> listPunts() {
         return puntsDAO.getAll();
     }
 
