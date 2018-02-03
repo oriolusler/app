@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8"/>
-    <title>Login</title>
+    <th:block th:replace="/fragments/header :: head"></th:block>
+    <title>Login user</title>
+    <link  th:href="@{'~/css/menu.css'}" rel="stylesheet" />
 </head>
 <body>
+
     <form action="/logUser" method="POST">
         <b>User:</b>
         <input type="text" name="user"/>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Crear oferta</title>
+</head>
+<body>
+<form action="/createOferta" method="post">
+    <div class="form-group">
+        <label for="text">Descripcio:</label>
+        <input type="text" name="descripcio"/>
+    </div>
+    <div class="form-group">
+        <label for="text">ENABLE:</label>
+        <input type="radio" name="enable" value="true" /> ON
+        <input type="radio" name="enable" value="false"/> OFF
+    </div>
+    <div class="form-group">
+        <label for="text">punts:</label>
+        <input type="number" name="punts"/>
+    </div>
+
+    <input type="submit" value="Crear Oferta"/>
+</form>
+</body>
+</html>

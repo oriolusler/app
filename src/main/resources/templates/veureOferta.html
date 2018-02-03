@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+
+    <div th:each="oferta : ${listaOfertas}" class="col-sm-6 col-md-3">
+        <div th:text="${oferta.descripcio}"></div>
+        <div th:text="${oferta.punts}"></div>
+
+    </div>
+</body>
+</html>
