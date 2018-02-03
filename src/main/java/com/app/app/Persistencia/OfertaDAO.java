@@ -1,0 +1,32 @@
+package com.app.app.Persistencia;
+
+import com.app.app.Domini.Oferta;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+@Repository
+public class OfertaDAO {
+
+    private JdbcTemplate jdbcTemplate;
+
+    private final String all = "SELECT* FROM OFERTA";
+
+    public OfertaDAO(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
+
+    private RowMapper<Oferta> mapper = (resultSet, i) ->
+            new Oferta(
+                    resultSet.getInt("ID_BOTIGA"),
+                    resultSet.getString("DESCRIPCIO_OFERTA"),
+                    resultSet.getBoolean("ENABLE"),
+                    resultSet.getInt("PUNTS")
+            );
+
+    public List<Oferta> all() {
+        return jdbcTemplate.query(all, mapper);
+    }
+}

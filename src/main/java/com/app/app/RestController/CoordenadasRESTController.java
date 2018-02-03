@@ -59,8 +59,8 @@ public class CoordenadasRESTController {
         return "";
     }
 
-    @PostMapping(value = "findStreet", produces = MediaType.APPLICATION_JSON_VALUE)
-    public String fins(@RequestBody CoordenadaDTO coord) {
+    @PostMapping(value = "saveLocation", produces = MediaType.APPLICATION_JSON_VALUE)
+    public String saveLocation(@RequestBody CoordenadaDTO coord) {
         String urlBase = "https://maps.googleapis.com/maps/api/geocode/json?latlng=";
 
         String toSearch = urlBase + coord.getLat() + "," + coord.getLng() + "&key=" + apiKey;
@@ -83,6 +83,34 @@ public class CoordenadasRESTController {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
+        return "";
+    }
+
+    @PostMapping(value = "street", produces = MediaType.APPLICATION_JSON_VALUE)
+    public String street(@RequestBody CoordenadaDTO coord) {
+        String urlBase = "https://maps.googleapis.com/maps/api/geocode/json?latlng=";
+
+        String toSearch = urlBase + coord.getLat() + "," + coord.getLng() + "&key=" + apiKey;
+
+        ResponseEntity<String> response = restTemplate.exchange(toSearch,
+                HttpMethod.GET, null, String.class);
+
+        JsonParser parser = new BasicJsonParser();
+        System.out.println("ALPOU");
+        try {
+            Map resultMap = parser.parseMap(response.getBody());
+            String resultString = resultMap.get("results").toString();
+            JSONArray jsonArray = new JSONArray(resultString);
+            JSONObject jsonWanted = jsonArray.getJSONObject(0);
+            String address = jsonWanted.get("formatted_address").toString();
+            String[] tokens = address.split(",");
+            return tokens[0];
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
 
         return "";
     }
