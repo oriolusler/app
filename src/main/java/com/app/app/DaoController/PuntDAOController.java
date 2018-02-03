@@ -19,7 +19,7 @@ public class PuntDAOController {
         return puntsDAO.getAll();
     }
 
-    public int getPoints(String email) {
+    public int  getPoints(String email) {
         return puntsDAO.getPoints(email);
     }
 
