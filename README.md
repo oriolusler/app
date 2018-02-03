@@ -60,7 +60,7 @@
                        
 - http://localhost:8080/coord
 
-     /saveLocation
+    - /saveLocation
        
      POST - Guardar una ubicacio, en cas que el carrer recuperat a partir de les cooredenades no existeixi es guarda a la bbdd amb l'atribut quantitat inicialitzat a 1, en altres cas s'actualitzara el contador.
        
@@ -75,7 +75,7 @@
               
         Carrer de la Riera, 48, 08301 Mataró, Barcelona, Spain
                  
-   /street
+  - /street
         
      POST - Retornar el nom del carrer donat per unes coordenades
      
@@ -92,7 +92,7 @@
                       
 -  http://localhost:8080/historic
 
-    /all
+   - /all
     
       GET - Agafar tots els carrers amb els cops que els usuaris han passat per cada carrer
                
@@ -115,7 +115,7 @@
         
 - http://localhost:8080/oferta
 
-    /insert
+   - /insert
     
     POST - aderir una oferta a la base de dades
         
@@ -133,7 +133,7 @@
            La resposta serà 1 si s'ha afegit correctament.
            En altre cas, no 'sha afegir.
         
-     /all
+    - /all
      
      GET - Retorna totes les ofertes
       
@@ -163,7 +163,7 @@
      
 - http://localhost:8080/punts     
      
-     /all
+    - /all
      
      GET - recull tots els usuatis amb els seus punts
      
@@ -183,7 +183,7 @@
                 ...
              ]
       
-    /getPoint/{email}  
+   - /getPoint/{email}  
     
      GET - Retorna els punts del usuari especificat al paramatre "email"
        
@@ -195,7 +195,7 @@
      
         1880
         
-   /update
+  - /update
    
      POST - edita la quantitat de punts que te l'usuari     
       
@@ -211,7 +211,7 @@
       
 - http://localhost:8080/users
 
-    /all
+   - /all
     
     GET - retorna tots els usuaris persistits
      
@@ -237,7 +237,7 @@
             ...
          ]       
         
-    /insert
+   - /insert
     
     POST - afageix un usuari a la base de dades
     
@@ -265,7 +265,7 @@
           "address": "carrer hola"
       } 
     
-    /login
+    - /login
     
     POST - es valida que un usuari, donat un email i una password, estiguin previament guardats a la base de dades.
     
@@ -288,34 +288,35 @@
          }
          
 -  http://localhost:8080/role
-
-    /all
+     
+     ID_ROLE 1 -> admin
+        
+     ID_ROLE 2 -> botiguer
+        
+     ID_ROLE 3 -> vianant
+    
+     (Tenen una taula a la bbdd corresponent)
+     
+    - /all
     
     GET - Recuperar tots els roles guardats. 
     
-    ID_ROLE 1 -> admin
-    
-    ID_ROLE 2 -> botiguer
-    
-    ID_ROLE 3 -> vianant
-
-    (Tenen una taula a la bbdd corresponent)
-    
-     **Exemple resposta:** 
+    **Exemple resposta:** 
        
-        [
-            {
-                "email": "botiga1@hotmail.com",
-                "id_role": 2
-            },
-            {
-                "email": "botiga2@hotmail.com",
-                "id_role": 2
-            },   
-            ...
-        ]  
+            
+            [
+                {
+                    "email": "botiga1@hotmail.com",
+                    "id_role": 2
+                },
+                {
+                    "email": "botiga2@hotmail.com",
+                    "id_role": 2
+                },   
+                ...
+            ]  
           
-     /getUserRole/{email}
+   - /getUserRole/{email}
      
       GET - retorna els roles que te un usuari que ve assigant per l'atribut correu       
         
@@ -327,17 +328,17 @@
       
         3
       
-      /insert
-      
-      POST - inserter roles a un usuari
+    - /insert
+           
+   POST - inserter roles a un usuari
         
-      **Exemple peticio:** 
+   **Exemple peticio:** 
                   
        http://localhost:3565/role/getUserRole/oriol.solere@hotmail.com
                   
-      **Exemple resposta:** 
+   **Exemple resposta:** 
       
-        Retorna 1 si la consulta update es correcte
+      Retorna 1 si la consulta update es correcte
         
         
         
