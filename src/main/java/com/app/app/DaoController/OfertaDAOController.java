@@ -15,6 +15,10 @@ public class OfertaDAOController {
         this.ofertaDAO = ofertaDAO;
     }
 
+    public int insert(Oferta oferta) {
+        return ofertaDAO.insert(oferta);
+    }
+
     public List<Oferta> getAll() {
         return ofertaDAO.all();
     }

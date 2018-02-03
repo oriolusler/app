@@ -13,6 +13,8 @@ public class OfertaDAO {
     private JdbcTemplate jdbcTemplate;
 
     private final String all = "SELECT* FROM OFERTA";
+    private final String insert = "INSERT INTO OFERTA (ID_BOTIGA,DESCRIPCIO_OFERTA,ENABLE,PUNTS) VALUES (?,?,?,?)";
+
 
     public OfertaDAO(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
@@ -29,4 +31,13 @@ public class OfertaDAO {
     public List<Oferta> all() {
         return jdbcTemplate.query(all, mapper);
     }
+
+    public int insert(Oferta oferta) {
+        return jdbcTemplate.update(insert,
+                oferta.getId_botiga(),
+                oferta.getDescripcio(),
+                oferta.isEnable(),
+                oferta.getPunts());
+    }
+
 }

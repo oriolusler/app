@@ -111,7 +111,6 @@ public class CoordenadasRESTController {
             e.printStackTrace();
         }
 
-
         return "";
     }
 

@@ -2,11 +2,8 @@ package com.app.app.RestController;
 
 import com.app.app.DaoController.OfertaDAOController;
 import com.app.app.Domini.Oferta;
-import com.app.app.Domini.Puntuacio;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -18,6 +15,11 @@ public class OfertaRESTController {
 
     public OfertaRESTController(OfertaDAOController ofertaDAOController) {
         this.ofertaDAOController = ofertaDAOController;
+    }
+
+    @PostMapping(value = "insert", produces = MediaType.APPLICATION_JSON_VALUE)
+    public int insert(@RequestBody Oferta oferta) {
+        return ofertaDAOController.insert(oferta);
     }
 
     @GetMapping(value = "all", produces = MediaType.APPLICATION_JSON_VALUE)

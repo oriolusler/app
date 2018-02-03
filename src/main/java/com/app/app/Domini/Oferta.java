@@ -1,5 +1,7 @@
 package com.app.app.Domini;
 
+import org.springframework.jdbc.core.RowCallbackHandler;
+
 public class Oferta {
 
     private int id_botiga;
