@@ -214,7 +214,9 @@
     /all
     
     GET - retorna tots els usuaris persistits
-    
+     
+     **Exemple resposta:**
+        
         [
             {
                 "name": "oriol",
@@ -321,7 +323,7 @@
         
         http://localhost:3565/role/getUserRole/oriol.solere@hotmail.com
         
-      **Exemple peticio:** 
+      **Exemple resposta:** 
       
         3
       
@@ -333,7 +335,7 @@
                   
        http://localhost:3565/role/getUserRole/oriol.solere@hotmail.com
                   
-      **Exemple peticio:** 
+      **Exemple resposta:** 
       
         Retorna 1 si la consulta update es correcte
         
