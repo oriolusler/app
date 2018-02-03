@@ -20,8 +20,7 @@ public class BotigaRESTController {
 
     @PostMapping(value = "insert", produces = MediaType.APPLICATION_JSON_VALUE)
     public Botiga insert(@RequestBody Botiga botiga) {
-        botigaDAOController.insert(botiga);
-        return botiga;
+        return  botigaDAOController.insert(botiga);
     }
 
     @GetMapping(value = "all", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -29,7 +28,7 @@ public class BotigaRESTController {
         return botigaDAOController.all();
     }
 
-    @GetMapping(value = "findId/{email:.+}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "findId/{email:.+ }", produces = MediaType.APPLICATION_JSON_VALUE)
     public int findId(@PathVariable("email") String email) {
         return botigaDAOController.getIdByEmail(email);
     }

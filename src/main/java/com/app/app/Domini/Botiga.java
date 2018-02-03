@@ -1,5 +1,7 @@
 package com.app.app.Domini;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 public class Botiga {
 
     private int idBotiga;
@@ -9,13 +11,24 @@ public class Botiga {
     private double lng;
     private int tipus;
 
-    public Botiga(int idBotiga, String email, String nomTenda, double lat, double lng, int tipus) {
-        this.idBotiga = idBotiga;
+    public Botiga() {
+    }
+
+    public Botiga(String email, String nomTenda, double lat, double lng, int tipus) {
         this.email = email;
         this.nomTenda = nomTenda;
         this.lat = lat;
         this.lng = lng;
         this.tipus = tipus;
+    }
+
+    public Botiga(int id_botiga, String email, String nom_tenda, double lat_bot, double lng_bot, int id_tipus) {
+        this.idBotiga = id_botiga;
+        this.email = email;
+        this.nomTenda = nom_tenda;
+        this.lat = lat_bot;
+        this.lng = lng_bot;
+        this.tipus = id_tipus;
     }
 
     public int getIdBotiga() {

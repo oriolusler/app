@@ -33,7 +33,8 @@ public class PuntsRESTController {
 
     @PostMapping(value = "update", produces = MediaType.APPLICATION_JSON_VALUE)
     public int insert(@RequestBody Puntuacio puntuacio) {
-        return puntsDAO.updatePoints(puntuacio.getUserEmail(), puntuacio.getQuantitat());
+        puntsDAO.updatePoints(puntuacio.getUserEmail(), puntuacio.getQuantitat());
+        return getPoints(puntuacio.getUserEmail());
     }
 
 }
