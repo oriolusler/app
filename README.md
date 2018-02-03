@@ -322,13 +322,13 @@
         
       **Exemple peticio:** 
         
-        http://localhost:3565/role/getUserRole/oriol.solere@hotmail.com
+            http://localhost:3565/role/getUserRole/oriol.solere@hotmail.com
         
       **Exemple resposta:** 
       
-        3
+            3
       
-    - /insert
+   - /insert
            
    POST - inserter roles a un usuari
         
@@ -338,7 +338,7 @@
                   
    **Exemple resposta:** 
       
-      Retorna 1 si la consulta update es correcte
+        Retorna 1 si la consulta update es correcte
         
         
         
