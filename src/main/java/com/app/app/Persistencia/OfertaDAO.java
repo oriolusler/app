@@ -15,6 +15,7 @@ public class OfertaDAO {
     private final String all = "SELECT* FROM OFERTA";
     private final String insert = "INSERT INTO OFERTA (ID_BOTIGA,DESCRIPCIO_OFERTA,ENABLE,PUNTS) VALUES (?,?,?,?)";
 
+    private final String findByEmail = "SELECT * FROM OFERTA WHERE EMAIL = ?";
 
     public OfertaDAO(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
