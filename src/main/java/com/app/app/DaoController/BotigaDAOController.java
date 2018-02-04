@@ -15,7 +15,7 @@ public class BotigaDAOController {
         this.botigaDAO = botigaDAO;
     }
 
-    public int insert(Botiga botiga) {
+    public Botiga insert(Botiga botiga) {
         return botigaDAO.insert(botiga);
     }
 

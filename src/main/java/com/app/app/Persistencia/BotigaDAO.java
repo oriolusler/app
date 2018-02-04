@@ -37,14 +37,21 @@ public class BotigaDAO {
     private RowMapper<Integer> mapperInt = (RowMapper<Integer>) (resultSet, i) -> resultSet.getInt(1);
 
 
-    public int insert(Botiga botiga) {
-        return jdbcTemplate.update(insert,
-                getId(),
+    public Botiga insert(Botiga botiga) {
+
+        int id = getId() + 1;
+
+        jdbcTemplate.update(insert,
+                id,
                 botiga.getEmail(),
                 botiga.getNomTenda(),
                 botiga.getLat(),
                 botiga.getLng(),
                 botiga.getTipus());
+
+        botiga.setIdBotiga(id);
+        return botiga;
+
     }
 
     private int getId() {
