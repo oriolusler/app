@@ -90,6 +90,15 @@ public class WebController {
 
         return "index";
     }
+    @GetMapping("gestioUsers")
+    public String veureUsuaris(Model model) {
+
+        List<UserDTO> listUser = userDAOController.getAllUsers();
+
+        model.addAttribute("listaUsers",listUser);
+
+        return "gestioUsers";
+    }
     @GetMapping("formOferta")
     public String createOferta(Model model) {
         return "crearOferta";
@@ -123,6 +132,16 @@ public class WebController {
         model.addAttribute("listaOfertas",listaOferta);
 
         return "veureOferta";
+    }
+
+    @GetMapping("veureOfertaAdmin")
+    public String veureOfertaAdmin(Model model) {
+
+        List<Oferta> listaOferta = ofertaDAO.all();
+
+        model.addAttribute("listaOfertas",listaOferta);
+
+        return "veureOfertaAdmin";
     }
 
     @GetMapping("/consultarPunts")
