@@ -6,7 +6,7 @@
         
          POST - Addició d'una botiga)  
            
-         **Exemple peticio:** 
+         **Exemple petició:** 
                
                {
                	"email":"pew@pew.com",
@@ -56,15 +56,15 @@
                       
      - findId/{email}
          
-         GET - Retorna la id de la botiga del usuari indicat al paramatre email.
+         GET - Retorna la id de la botiga del usuari indicat al paràmetre email.
                        
 - http://localhost:8080/coord
 
     - /saveLocation
        
-     POST - Guardar una ubicacio, en cas que el carrer recuperat a partir de les cooredenades no existeixi es guarda a la bbdd amb l'atribut quantitat inicialitzat a 1, en altres cas s'actualitzara el contador.
+     POST - Guardar una ubicació, en cas que el carrer recuperat a partir de les coordenades no existeixi es guarda a la bbdd amb l'atribut quantitat inicialitzat a 1, en altres cas s'actualitzara el contador.
        
-     **Exemple peticio:** 
+     **Exemple petició:** 
                
                {
                	"lat": 41.5397848,
@@ -79,7 +79,7 @@
         
      POST - Retornar el nom del carrer donat per unes coordenades
      
-     **Exemple peticio:** 
+     **Exemple petició:** 
                     
             {
                 "lat": 41.5397848,
@@ -117,9 +117,9 @@
 
    - /insert
     
-    POST - aderir una oferta a la base de dades
+    POST - adherir una oferta a la base de dades
         
-    **Exemple peticio:** 
+    **Exemple petició:** 
                        
            {
            	"id_botiga": 2,
@@ -165,7 +165,7 @@
      
     - /all
      
-     GET - recull tots els usuatis amb els seus punts
+     GET - recull tots els usuaris amb els seus punts
      
      **Exemple resposta:**  
      
@@ -187,7 +187,7 @@
     
      GET - Retorna els punts del usuari especificat al paramatre "email"
        
-     **Exemple peticio:** 
+     **Exemple petició:** 
             
       http://localhost:3565/punts/getPoint/oriol.solere@hotmail.com 
       
@@ -199,7 +199,7 @@
    
      POST - edita la quantitat de punts que te l'usuari     
       
-     **Exemple peticio:** 
+     **Exemple petició:** 
      
          {
             "userEmail": "oriol.solere@hotmail.com",
@@ -239,9 +239,9 @@
         
    - /insert
     
-    POST - afageix un usuari a la base de dades
+    POST - afegeix un usuari a la base de dades
     
-    **Exemple peticio:** 
+    **Exemple petició:** 
         
         {
             "name": "oriol",
@@ -269,7 +269,7 @@
     
     POST - es valida que un usuari, donat un email i una password, estiguin previament guardats a la base de dades.
     
-     **Exemple peticio:** 
+     **Exemple petició:** 
         
         {
             "email":"oriol.soler23@hotmail.com",
@@ -299,7 +299,7 @@
      
     - /all
     
-    GET - Recuperar tots els roles guardats. 
+    GET - Recuperar tots els rols guardats. 
     
     **Exemple resposta:** 
        
@@ -318,9 +318,9 @@
           
    - /getUserRole/{email}
      
-      GET - retorna els roles que te un usuari que ve assigant per l'atribut correu       
+      GET - retorna els rols que té un usuari que ve assignat per l'atribut correu       
         
-      **Exemple peticio:** 
+      **Exemple petició:** 
         
             http://localhost:3565/role/getUserRole/oriol.solere@hotmail.com
         
@@ -330,9 +330,9 @@
       
    - /insert
            
-   POST - inserter roles a un usuari
+   POST - insertar rols a un usuari
         
-   **Exemple peticio:** 
+   **Exemple petició:** 
                   
        http://localhost:3565/role/getUserRole/oriol.solere@hotmail.com
                   
